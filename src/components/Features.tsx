@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 import {
   FileText,
   Search,
@@ -7,7 +10,8 @@ import {
   Building2,
   FileCheck2,
   AlertTriangle,
-  FolderLock
+  FolderLock,
+  ArrowUpRight
 } from "lucide-react";
 
 const modules = [
@@ -18,6 +22,7 @@ const modules = [
     description:
       "Consulta em lote e monitoramento diário da situação cadastral na Receita Federal, CND Federal (Receita/PGFN), CNDT Trabalhista e Regularidade FGTS. Identificação imediata de divergências societárias ou pendências antes da publicação do edital.",
     specs: ["Atualização diária", "Exportação em PDF timbrado", "Histórico de certidões"],
+    icon: FileText,
   },
   {
     num: "02",
@@ -26,6 +31,7 @@ const modules = [
     description:
       "Checagem contínua contra sanções e impedimentos nos cadastros CEIS (Empresas Inidôneas), CNEP (Empresas Punidas pela Lei Anticorrupção), CEPIM (Entidades Sem Fins Lucrativos) e no Cadastro de Inidôneos do Tribunal de Contas da União (TCU).",
     specs: ["Protocolo de Nada Consta", "Alerta preventivo por e-mail", "Varredura de filiais e sócios"],
+    icon: Search,
   },
   {
     num: "03",
@@ -34,6 +40,7 @@ const modules = [
     description:
       "Mapeamento guiado de maturidade de compliance corporativo. Centralização de evidências: atas de reunião, Código de Conduta versionado, listas de presença de treinamentos e formalização do canal de denúncias independente.",
     specs: ["Cálculo de índice de maturidade", "Repositório de evidências", "Modelos editáveis de políticas"],
+    icon: Scale,
   },
   {
     num: "04",
@@ -42,6 +49,7 @@ const modules = [
     description:
       "Formulário digital de homologação de integridade para parceiros comerciais e subcontratados em obras públicas. Mapeamento de conflitos de interesse, verificação de Pessoas Expostas Politicamente (PEP) e sanções cruzadas.",
     specs: ["Questionário de integridade", "Matriz de risco de terceiros", "Triagem societária"],
+    icon: Building2,
   },
   {
     num: "05",
@@ -50,6 +58,7 @@ const modules = [
     description:
       "Emissão automática de minutas e declarações exigidas pela Lei 14.133/2021: declaração de inexistência de fato impeditivo, declaração de não emprego de menores, cumprimento de cotas de PCD e declaração formal de Programa de Integridade.",
     specs: ["Emissão em 1 clique", "Padrão aceito em licitações", "Assinatura digital ICP-Brasil"],
+    icon: FileCheck2,
   },
   {
     num: "06",
@@ -58,6 +67,7 @@ const modules = [
     description:
       "Armazenamento perene com hash SHA-256 e trilha de auditoria para fins de fiscalização pelo TCU, CGU e auditores externos de conformidade. Registro de data, hora e responsável por cada documento arquivado.",
     specs: ["Trilha de auditoria indelével", "Criptografia em repouso", "Conformidade LGPD"],
+    icon: FolderLock,
   },
 ];
 
@@ -68,56 +78,77 @@ export function Features() {
         
         {/* Título de Seção */}
         <div className="max-w-3xl mb-16">
-          <span className="text-xs font-mono uppercase tracking-wider text-slate-500">
-            ESPECIFICAÇÕES DA PLATAFORMA
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-700 text-xs font-mono mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
+            <span>ESPECIFICAÇÕES DA PLATAFORMA</span>
+          </div>
+
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight">
             Módulos de conformidade desenhados para{" "}
             <span className="font-editorial italic font-normal text-slate-800">
               departamentos jurídicos e licitantes
             </span>
           </h2>
-          <p className="mt-4 text-base text-slate-600 leading-relaxed">
+          <p className="mt-4 text-base text-slate-600 leading-relaxed font-normal">
             Elimine processos manuais, checagens dispersas em múltiplos portais e o risco de desclassificação por documentos vencidos ou ausência de programa de compliance formalizado.
           </p>
         </div>
 
-        {/* Grid Editorial Assimetrico de Módulos */}
+        {/* Grid Editorial Assimetrico de Módulos com cards táteis e microinterações */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {modules.map((m, idx) => (
-            <div
-              key={idx}
-              className="border border-slate-300 rounded bg-white p-6 flex flex-col justify-between hover:border-slate-400 transition-colors"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
-                  <span className="font-mono text-xl font-bold text-slate-900">{m.num}</span>
-                  <span className="font-mono text-[10px] uppercase font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-                    {m.tag}
-                  </span>
+          {modules.map((m, idx) => {
+            const IconComponent = m.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group relative border border-slate-300/80 rounded-lg bg-white p-6 flex flex-col justify-between card-tactile hover:border-slate-400 transition-all overflow-hidden"
+              >
+                {/* Linha de acabamento tátil no topo do card ao passar o mouse */}
+                <div 
+                  aria-hidden="true" 
+                  className="absolute inset-x-0 top-0 h-[2px] bg-slate-950 opacity-0 group-hover:opacity-100 transition-opacity" 
+                />
+
+                <div>
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-slate-950 group-hover:text-white transition-colors">
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                      <span className="font-mono text-lg font-bold text-slate-900">{m.num}</span>
+                    </div>
+
+                    <span className="font-mono text-[10px] uppercase font-bold text-slate-600 bg-slate-100 group-hover:bg-slate-200/70 px-2 py-0.5 rounded transition-colors">
+                      {m.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-slate-900 transition-colors">
+                    {m.title}
+                  </h3>
+
+                  <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {m.description}
+                  </p>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-950 leading-snug">
-                  {m.title}
-                </h3>
-
-                <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {m.description}
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100">
-                <ul className="space-y-1.5">
-                  {m.specs.map((spec, sIdx) => (
-                    <li key={sIdx} className="text-[11px] font-mono text-slate-500 flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-slate-400" />
-                      <span>{spec}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <ul className="space-y-1.5">
+                    {m.specs.map((spec, sIdx) => (
+                      <li key={sIdx} className="text-[11px] font-mono text-slate-500 flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-slate-400 group-hover:bg-slate-900 transition-colors" />
+                        <span>{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>
