@@ -45,7 +45,7 @@ export function ContactForm() {
       reset();
     } catch {
       toast.error("Não foi possível enviar sua solicitação", {
-        description: "Por favor, verifique sua conexão ou envie um e-mail direto.",
+        description: "Por favor, verifique sua conexão e tente novamente.",
       });
     } finally {
       setIsSubmitting(false);
@@ -96,11 +96,11 @@ export function ContactForm() {
               </div>
 
               <div className="p-4 rounded border border-slate-800 bg-slate-950/70 flex items-start gap-3">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-bold text-white block">Canal Direto da Equipe Jurídica</span>
+                  <span className="font-bold text-white block">Atendimento Dedicado</span>
                   <span className="text-slate-400 mt-0.5 block">
-                    contato@integridade360.com.br
+                    Retorno técnico em até 1 dia útil por especialistas em conformidade.
                   </span>
                 </div>
               </div>

@@ -69,7 +69,7 @@ export default function Home() {
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "comercial",
-          "email": "contato@integridade360.com.br",
+          "url": "https://www.integridade360.com.br/#contato",
           "areaServed": "BR",
           "availableLanguage": "Portuguese",
         },

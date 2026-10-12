@@ -9,22 +9,6 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#fbfbfd]/95 backdrop-blur-md border-b border-slate-200">
-      {/* Top micro-bar institucional */}
-      <div className="bg-slate-900 text-slate-300 text-[11px] font-mono py-1 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>PADRÃO NORMATIVO: DECRETO FEDERAL Nº 12.304/2026</span>
-            <span className="hidden sm:inline text-slate-500">|</span>
-            <span className="hidden sm:inline text-slate-400">LEI Nº 14.133/2021 (ART. 25, § 4º)</span>
-          </div>
-          <div className="hidden md:flex items-center gap-4 text-slate-400">
-            <span>PORTAL DA TRANSPARÊNCIA INTEGRADO</span>
-            <span>CONSULTA TCU / CGU ATIVA</span>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           {/* Logo Editorial */}

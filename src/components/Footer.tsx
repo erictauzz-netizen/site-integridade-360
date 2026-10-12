@@ -86,16 +86,18 @@ export function Footer() {
           {/* Atendimento */}
           <div>
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
-              Contato Institucional
+              Atendimento Técnico
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span className="font-mono">contato@integridade360.com.br</span>
-              </li>
-              <li className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 <span>São Paulo, SP — Brasil</span>
+              </li>
+              <li>
+                <span className="text-slate-500 block text-[11px]">Solicitações e Demonstrações:</span>
+                <a href="#contato" className="text-amber-400 hover:underline">
+                  Formulário Oficial de Contato →
+                </a>
               </li>
             </ul>
           </div>

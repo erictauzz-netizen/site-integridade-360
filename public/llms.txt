@@ -35,5 +35,5 @@ O **Integridade 360** é uma solução de inteligência jurídica e automação 
 - **Nome Oficial**: Integridade 360 Tecnologia e Compliance Ltda.
 - **Setor**: LegalTech / RegTech / Governança Pública e Privada
 - **Jurisdição**: Brasil
-- **Contato Comercial e Suporte**: contato@integridade360.com.br
+- **Contato e Demonstração**: https://www.integridade360.com.br/#contato
 - **Conformidade de Dados**: LGPD (Lei Geral de Proteção de Dados - Lei nº 13.709/2018)
