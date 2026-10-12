@@ -1,69 +1,113 @@
-import Image from "next/image";
+import React from "react";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { WorkflowSection } from "@/components/WorkflowSection";
+import { DecreeSection } from "@/components/DecreeSection";
+import { Features } from "@/components/Features";
+import { FaqSection } from "@/components/FaqSection";
+import { FAQ_DATA } from "@/data/faq";
+import { ContactForm } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
+  // Dados estruturados Schema.org para o Google (Rich Snippets)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Integridade 360",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "LegalTech / RegTech Compliance",
+        "softwareVersion": "2026.1",
+        "description":
+          "Plataforma de gestão de Programa de Integridade e Compliance para contratações públicas e privadas, em conformidade com o Decreto Federal 12.304/2026 e a Lei 14.133/2021.",
+        "featureList": [
+          "Emissão automatizada de Dossiês de CNPJ e Certidões Negativas",
+          "Varredura em tempo real em CEIS, CNEP, CEPIM e Cadastro de Inidôneos do TCU",
+          "Mapeamento e comprovação dos 17 parâmetros do Decreto Federal nº 12.304/2026",
+          "Due Diligence e homologação de risco de fornecedores e terceiros",
+          "Gerador de declarações jurídicas oficiais para editais de licitação",
+        ],
+        "isBasedOn": [
+          "Lei Federal nº 14.133/2021 (Art. 25, § 4º)",
+          "Decreto Federal nº 12.304/2026",
+          "Diretrizes Normativas da Controladoria-Geral da União (CGU)",
+        ],
+        "knowsAbout": [
+          "Decreto Federal nº 12.304/2026",
+          "Lei Federal nº 14.133/2021 (Nova Lei de Licitações)",
+          "Programa de Integridade Corporativa",
+          "Compliance em Licitações Públicas",
+          "Cadastro Nacional de Empresas Inidôneas e Suspensas (CEIS)",
+          "Cadastro Nacional de Empresas Punidas (CNEP)",
+          "Tribunal de Contas da União (TCU)",
+          "Controladoria-Geral da União (CGU)",
+          "Due Diligence de Terceiros e Fornecedores",
+          "Dossiê CNPJ e Certidões Negativas",
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+        },
+      },
+      {
+        "@type": "Organization",
+        "name": "Integridade 360 Tecnologia e Compliance Ltda.",
+        "alternateName": "Integridade 360",
+        "url": "https://www.integridade360.com.br",
+        "logo": "https://www.integridade360.com.br/favicon.ico",
+        "knowsAbout": [
+          "Compliance Governamental",
+          "Programas de Integridade",
+          "Licitações Públicas de Grande Vulto",
+          "Prevenção à Corrupção Empresarial",
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "comercial",
+          "email": "contato@integridade360.com.br",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": FAQ_DATA.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      {/* Injeção de Dados Estruturados Schema.org para o Googlebot */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <Navbar />
+
+      <main className="flex-1">
+        <Hero />
+        <WorkflowSection />
+        <DecreeSection />
+        <Features />
+        <FaqSection />
+        <ContactForm />
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }

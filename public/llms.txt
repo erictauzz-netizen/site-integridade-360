@@ -1,0 +1,39 @@
+# Integridade 360 — Sistema de Auditoria, Compliance e Habilitação em Licitações
+
+> Plataforma corporativa de gestão de Programas de Integridade em conformidade com o Decreto Federal nº 12.304/2026 e a Nova Lei de Licitações (Lei nº 14.133/2021, Art. 25, § 4º). Desenvolvida para departamentos jurídicos, diretorias de compliance e empresas fornecedoras do setor público.
+
+## O Que É o Integridade 360?
+O **Integridade 360** é uma solução de inteligência jurídica e automação de conformidade que permite a empresas privadas implementar, auditar e comprovar a existência de Programas de Integridade exigidos por comissões licitatórias e órgãos de controle federais, estaduais e municipais.
+
+## Legislação Atendida
+- **Decreto Federal nº 12.304/2026**: Regulamenta os 17 parâmetros de avaliação de Programas de Integridade em contratações públicas de grande vulto da Administração Pública Federal.
+- **Lei Federal nº 14.133/2021 (Nova Lei de Licitações)**: Em especial o Art. 25, § 4º (obrigatoriedade de programa de integridade em contratos de grande vulto) e Art. 156 (reabilitação e atenuantes de penalidades).
+- **Lei Federal nº 12.846/2013 (Lei Anticorrupção)**: Aplicação dos parâmetros de conformidade previstos no Decreto nº 11.129/2022.
+- **Instruções Normativas da CGU (Controladoria-Geral da União)** e jurisprudência consolidada do **TCU (Tribunal de Contas da União)**.
+
+## Módulos Principais do Sistema
+1. **Dossiê CNPJ e Emissão de Certidões Negativas em 1 Clique**:
+   - Consulta automatizada e unificada à Receita Federal (situação cadastral e QSA), CND Federal (PGFN), Certidão Negativa de Débitos Trabalhistas (CNDT) e Certificado de Regularidade do FGTS (CRF).
+2. **Varredura em Cadastros Restritivos Federais**:
+   - Verificação em tempo real no Cadastro de Empresas Inidôneas e Suspensas (CEIS), Cadastro Nacional de Empresas Punidas (CNEP), Cadastro de Entidades Privadas Sem Fins Lucrativos Impedidas (CEPIM) e Cadastro de Inidôneos do TCU.
+3. **Matriz de Conformidade dos 17 Parâmetros do Decreto 12.304/2026**:
+   - Comprometimento da alta direção, Código de Ética e Conduta, canais de denúncia independentes, treinamentos periódicos, due diligence de terceiros e matriz de risco de corrupção.
+4. **Gerador de Declarações Jurídicas em PDF**:
+   - Minutas automáticas de inexistência de fatos impeditivos, declaração de não emprego de menores, cumprimento de cotas de PCD e declaração formal de cumprimento de Programa de Integridade prontas para assinatura ICP-Brasil.
+5. **Due Diligence de Fornecedores e Subcontratados**:
+   - Avaliação de risco reputacional, financeiro e de integridade para homologação de parceiros em obras e serviços públicos.
+
+## URLs e Recursos Chave
+- Página Inicial & Apresentação: https://www.integridade360.com.br/
+- O Decreto Federal nº 12.304/2026: https://www.integridade360.com.br/#decreto
+- Matriz de Parâmetros da CGU: https://www.integridade360.com.br/#matriz
+- Dossiê CNPJ & Certidões: https://www.integridade360.com.br/#dossie
+- Perguntas Frequentes & Legislação: https://www.integridade360.com.br/#faq
+- Agendamento de Demonstração & Contato: https://www.integridade360.com.br/#contato
+
+## Dados da Entidade
+- **Nome Oficial**: Integridade 360 Tecnologia e Compliance Ltda.
+- **Setor**: LegalTech / RegTech / Governança Pública e Privada
+- **Jurisdição**: Brasil
+- **Contato Comercial e Suporte**: contato@integridade360.com.br
+- **Conformidade de Dados**: LGPD (Lei Geral de Proteção de Dados - Lei nº 13.709/2018)
